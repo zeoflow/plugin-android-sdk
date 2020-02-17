@@ -1,3 +1,17 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+    }
+}
+
+group = 'com.zeoflow.sdk'
+version = '1.0.0'
+project.ext.archivesBaseName = 'zeoflow-services'
+project.ext.pomDesc = 'Gradle plug-in to use the Zeoflow API applications.'
+
 plugins {
     id 'groovy'
     id 'java'

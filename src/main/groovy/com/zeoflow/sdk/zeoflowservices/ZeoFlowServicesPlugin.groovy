@@ -141,9 +141,9 @@ class ZeoFlowServicesPlugin implements Plugin<Project> {
     File outputDir =
         project.file("$project.buildDir/generated/res/zeoflow-services/$variant.dirName")
 
-    GoogleServicesTask task = project.tasks
+    ZeoFlowServicesTask task = project.tasks
         .create("process${variant.name.capitalize()}ZeoFlowServices",
-         GoogleServicesTask)
+                ZeoFlowServicesTask)
 
     task.setIntermediateDir(outputDir)
     task.setVariantDir(variant.dirName)

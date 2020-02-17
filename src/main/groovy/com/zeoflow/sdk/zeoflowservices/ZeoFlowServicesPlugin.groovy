@@ -48,11 +48,13 @@ class ZeoFlowServicesPlugin implements Plugin<Project> {
     MODEL_LIBRARY([
       "com.android.model.library"
     ])
-    public PluginType(Collection plugins) {
+
+    PluginType(Collection plugins) {
       this.plugins = plugins
     }
     private final Collection plugins
-    public Collection plugins() {
+
+    Collection plugins() {
       return plugins
     }
   }
@@ -70,7 +72,7 @@ class ZeoFlowServicesPlugin implements Plugin<Project> {
         new DependencyInspector(globalDependencies, project.getName(),
             "This error message came from the zeoflow-services Gradle plugin, report" +
                 " issues at https://github.com/zeoflow/plugin-android-sdk and disable by " +
-                "adding \"zeoflowServices { disableVersionCheck = true }\" to your build.gradle file."));
+                "adding \"zeoflowServices { disableVersionCheck = true }\" to your build.gradle file."))
     }
     for (PluginType pluginType : PluginType.values()) {
       for (String plugin : pluginType.plugins()) {
@@ -172,7 +174,7 @@ class ZeoFlowServicesPlugin implements Plugin<Project> {
     }
   }
 
-  public static class ZeoFlowServicesPluginConfig {
+  static class ZeoFlowServicesPluginConfig {
     boolean disableVersionCheck = false
   }
 }

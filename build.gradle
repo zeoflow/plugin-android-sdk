@@ -7,14 +7,6 @@ buildscript {
     }
 }
 
-group = 'com.zeoflow.sdk'
-version = '1.0.0'
-project.ext.archivesBaseName = 'zeoflow-services'
-project.ext.pomDesc = 'Gradle plug-in to use the Zeoflow API applications.'
-
-apply plugin: 'groovy'
-apply plugin: 'java-gradle-plugin'
-
 plugins {
     id 'java-gradle-plugin'
     id 'groovy'
@@ -25,6 +17,18 @@ plugins {
         implementationClass = 'com.zeoflow.sdk.zeoflowservices.ZeoFlowServicesPlugin'
     }
 }
+
+
+group = 'com.zeoflow.sdk'
+version = '1.0.0'
+project.ext.archivesBaseName = 'zeoflow-services'
+project.ext.pomDesc = 'Gradle plug-in to use the Zeoflow API applications.'
+
+apply plugin: 'groovy'
+apply plugin: 'java-gradle-plugin'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -42,9 +46,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation 'com.google.truth:truth:0.42'
 }
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 intellij {
     version '2019.3.1'
